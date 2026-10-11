@@ -1,0 +1,2 @@
+# Measurement notes for this demonstration
+Track impressions, link clicks, tagged product-page visits, add-to-cart events and purchases if a real analytics setup is available. Click-through rate is clicks divided by impressions. Purchase conversion rate is purchases divided by product-page visits. Return on ad spend is attributed revenue divided by advertising spend. When a denominator is zero, the rate is undefined. No historical results, forecast, tracking implementation or causal attribution evidence is supplied in this demo.

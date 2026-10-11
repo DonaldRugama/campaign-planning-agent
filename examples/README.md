@@ -1,0 +1,2 @@
+# Sample outputs
+These are the user-tested v1.4 outputs from October 11, 2026. colab/ includes all three exported files. gradio/ includes the downloaded report and calendar; its trace was reviewed from the chat and is not reproduced here. The files use fictional sample documents. Accepted means a model selection passed validation; fallback means Python supplied a replacement. Both are disclosed in the reports.

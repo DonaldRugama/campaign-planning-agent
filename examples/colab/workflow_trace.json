@@ -1,0 +1,133 @@
+{
+  "brief": {
+    "product": "TrailSip reusable water bottle",
+    "audience": "College students",
+    "goal": "Increase product-page visits and purchases",
+    "channel": "Instagram",
+    "budget": 200,
+    "days": 14
+  },
+  "mode": "ai",
+  "plan": "Proposed research questions (not findings):\n- What facts about TrailSip reusable water bottle are documented in the supplied catalog?\n- What documented brand rules apply to the proposed Instagram campaign for College students?\n- Which documented metrics can evaluate the goal 'Increase product-page visits and purchases' during this 14-day campaign?",
+  "evidence": [
+    {
+      "id": "brand_notes.md:1",
+      "text": "# Fictional brand notes TrailSip uses a friendly, practical tone. Present the product clearly and avoid exaggerated claims. College students are a proposed campaign audience, not an audience validated by research. Instagram is the example channel, not a proven best channel. All proposed creative and targeting should be treated as hypotheses requiring testing.",
+      "score": 0.6732875108718872
+    },
+    {
+      "id": "product_catalog.md:1",
+      "text": "# Fictional demonstration catalog TrailSip reusable water bottle is a fictional product for a portfolio demo. It costs $24, holds 750 ml, and comes in blue and green. No real store or checkout exists. No evidence is provided for temperature retention, leak resistance, health benefits, certifications or environmental impact. Do not claim these properties. No discounts are authorized.",
+      "score": 0.5885075330734253
+    },
+    {
+      "id": "measurement_notes.md:1",
+      "text": "# Measurement notes for this demonstration Track impressions, link clicks, tagged product-page visits, add-to-cart events and purchases if a real analytics setup is available. Click-through rate is clicks divided by impressions. Purchase conversion rate is purchases divided by product-page visits. Return on ad spend is attributed revenue divided by advertising spend. When a denominator is zero, the rate is undefined. No historical results, forecast, tracking implementation or causal attribution evidence is supplied in this demo.",
+      "score": 0.43156731128692627
+    }
+  ],
+  "research": "Selected document excerpts (verbatim; no live web research):\n\n[brand_notes.md:1] # Fictional brand notes TrailSip uses a friendly, practical tone. Present the product clearly and avoid exaggerated claims. College students are a proposed campaign audience, not an audience validated by research. Instagram is the example channel, not a proven best channel. All proposed creative and targeting should be treated as hypotheses requiring testing.\n\n[product_catalog.md:1] # Fictional demonstration catalog TrailSip reusable water bottle is a fictional product for a portfolio demo. It costs $24, holds 750 ml, and comes in blue and green. No real store or checkout exists. No evidence is provided for temperature retention, leak resistance, health benefits, certifications or environmental impact. Do not claim these properties. No discounts are authorized.\n\n[measurement_notes.md:1] # Measurement notes for this demonstration Track impressions, link clicks, tagged product-page visits, add-to-cart events and purchases if a real analytics setup is available. Click-through rate is clicks divided by impressions. Purchase conversion rate is purchases divided by product-page visits. Return on ad spend is attributed revenue divided by advertising spend. When a denominator is zero, the rate is undefined. No historical results, forecast, tracking implementation or causal attribution evidence is supplied in this demo.",
+  "campaign": "## Proposed strategy\nTest product-fact creative on Instagram for College students. This audience choice is a hypothesis. Goal: Increase product-page visits and purchases. No numerical forecast is supplied.\n\n## Three draft posts\n1. Meet TrailSip reusable water bottle. It costs $24, holds 750 ml, and comes in blue and green. Explore the product details. [product_catalog.md:1] (selection: accepted)\n\n2. Make room for TrailSip reusable water bottle. It costs $24, holds 750 ml, and comes in blue and green. Which color would you choose? [product_catalog.md:1] (selection: fallback)\n\n3. Take a closer look at TrailSip reusable water bottle. It costs $24, holds 750 ml, and comes in blue and green. Learn more on the product page. [product_catalog.md:1] (selection: accepted)\n\n## Budget proposal - calculated by Python\nTotal cap: $200.00 across 14 days.\nCreative test allocation: $50.00.\nReserve pending review: $150.00.\nAllocated total: $200.00.\nThis 25% test allocation is a template suggestion, not research. No spending was triggered.\n\n## Measurement - fixed definitions\nCTR = link clicks / impressions.\nPurchase conversion rate = purchases / product-page visits.\nROAS = attributed revenue / ad spend.\nA rate is undefined when its denominator is zero. No customer lifetime value is calculated.\n\nReview all draft posts before publishing.",
+  "trace": [
+    "Planner completed: questions passed to Researcher",
+    "Researcher completed: cited document excerpts passed to Executor",
+    "Executor completed: three source-backed template posts and fixed budget/metrics ready",
+    "Automation completed: report, calendar and trace exported"
+  ],
+  "warnings": [
+    "planner: invalid or incomplete model selection; used a labeled Python fallback.",
+    "executor: invalid or incomplete model selection; used a labeled Python fallback.",
+    "AI selects questions, evidence and template components; Python renders approved quotes. This is constrained generation, not unrestricted copywriting.",
+    "Source matching verifies quotation provenance, not whether the source itself is true. Human review is required."
+  ],
+  "version": "1.4",
+  "posts": [
+    {
+      "number": 1,
+      "caption": "Meet TrailSip reusable water bottle. It costs $24, holds 750 ml, and comes in blue and green. Explore the product details.",
+      "source_id": "product_catalog.md:1",
+      "method": "accepted"
+    },
+    {
+      "number": 2,
+      "caption": "Make room for TrailSip reusable water bottle. It costs $24, holds 750 ml, and comes in blue and green. Which color would you choose?",
+      "source_id": "product_catalog.md:1",
+      "method": "fallback"
+    },
+    {
+      "number": 3,
+      "caption": "Take a closer look at TrailSip reusable water bottle. It costs $24, holds 750 ml, and comes in blue and green. Learn more on the product page.",
+      "source_id": "product_catalog.md:1",
+      "method": "accepted"
+    }
+  ],
+  "generation_events": [
+    {
+      "role": "planner",
+      "status": "fallback",
+      "reason": "Select each supplied question index exactly once.",
+      "generation": {
+        "role": "planner",
+        "tokens": 11,
+        "hit_limit": false
+      }
+    },
+    {
+      "role": "researcher",
+      "status": "accepted",
+      "raw": "{\"selected_indices\": [0, 1, 2]}",
+      "generation": {
+        "role": "researcher",
+        "tokens": 14,
+        "hit_limit": false
+      }
+    },
+    {
+      "role": "executor",
+      "status": "accepted",
+      "raw": "{\"hook_id\": 0, \"fact_id\": 0, \"cta_id\": 0}",
+      "generation": {
+        "role": "executor",
+        "tokens": 22,
+        "hit_limit": false
+      }
+    },
+    {
+      "role": "executor",
+      "status": "fallback",
+      "reason": "Repeated hook or call to action; distinct posts required.",
+      "generation": {
+        "role": "executor",
+        "tokens": 22,
+        "hit_limit": false
+      }
+    },
+    {
+      "role": "executor",
+      "status": "accepted",
+      "raw": "{\"hook_id\": 2, \"fact_id\": 0, \"cta_id\": 2}",
+      "generation": {
+        "role": "executor",
+        "tokens": 22,
+        "hit_limit": false
+      }
+    }
+  ],
+  "selected_evidence": [
+    {
+      "id": "brand_notes.md:1",
+      "text": "# Fictional brand notes TrailSip uses a friendly, practical tone. Present the product clearly and avoid exaggerated claims. College students are a proposed campaign audience, not an audience validated by research. Instagram is the example channel, not a proven best channel. All proposed creative and targeting should be treated as hypotheses requiring testing.",
+      "score": 0.6732875108718872
+    },
+    {
+      "id": "product_catalog.md:1",
+      "text": "# Fictional demonstration catalog TrailSip reusable water bottle is a fictional product for a portfolio demo. It costs $24, holds 750 ml, and comes in blue and green. No real store or checkout exists. No evidence is provided for temperature retention, leak resistance, health benefits, certifications or environmental impact. Do not claim these properties. No discounts are authorized.",
+      "score": 0.5885075330734253
+    },
+    {
+      "id": "measurement_notes.md:1",
+      "text": "# Measurement notes for this demonstration Track impressions, link clicks, tagged product-page visits, add-to-cart events and purchases if a real analytics setup is available. Click-through rate is clicks divided by impressions. Purchase conversion rate is purchases divided by product-page visits. Return on ad spend is attributed revenue divided by advertising spend. When a denominator is zero, the rate is undefined. No historical results, forecast, tracking implementation or causal attribution evidence is supplied in this demo.",
+      "score": 0.43156731128692627
+    }
+  ]
+}

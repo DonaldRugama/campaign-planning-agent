@@ -1,0 +1,5 @@
+torch>=2.2,<3
+transformers>=4.45,<5
+sentence-transformers>=3,<6
+gradio>=5,<7
+httpx[socks]>=0.28,<1
