@@ -36,3 +36,21 @@ class BrowserTests(unittest.TestCase):
         finally:
             app.resources.clear()
             app.resources.update(previous)
+
+    def test_uploaded_brief_and_documents_callback(self):
+        import app
+        original = app.run_campaign
+        with tempfile.TemporaryDirectory() as folder:
+            brief = app.load_request(str(Path('templates/campaign_brief.json').resolve()))
+            docs = [str(p.resolve()) for p in Path('templates').glob('*.txt')]
+            with patch.object(app, 'run_campaign', side_effect=lambda *a, **kw: original(*a, output_root=Path(folder)/'out', **kw)):
+                report, trace, files = app.submit(*brief, 'practice', docs, 'It costs $30 and comes in white and black.', True, progress=lambda *a, **kw: None)
+            self.assertIn('DeskGlow',report)
+            self.assertNotIn('750 ml',report)
+            self.assertEqual(len(files),3)
+
+    def test_changed_product_without_sources_rejected(self):
+        import app
+        import gradio as gr
+        with self.assertRaises(gr.Error):
+            app.submit('Another product','Students','Visits','Instagram',40,7,'practice',progress=lambda *a, **kw: None)

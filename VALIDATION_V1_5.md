@@ -1,0 +1,2 @@
+# v1.5 validation
+23 core checks pass, including custom-product source use, run isolation, quote approval, malformed briefs, unsupported/oversize files and duplicate filenames. v1.4 user-tested AI outputs remain in examples/ as historical evidence, not v1.5 upload validation. Real v1.5 model inference and Colab/browser upload execution require a new user test. All 28 tests passed, including five real Gradio callback checks using Gradio 6.30.0. Browser rendering and remote Colab execution were not exercised.

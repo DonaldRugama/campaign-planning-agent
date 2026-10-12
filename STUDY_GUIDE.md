@@ -33,3 +33,6 @@ CTR = link clicks / impressions. Purchase conversion = purchases / product-page 
 
 ## All setup and imports
 The notebook installs torch, transformers, sentence-transformers, gradio and httpx[socks]. Every Python import is included in the source. Model-related imports happen inside their classes, so practice mode needs only Python's standard library. Install commands and Windows environment activation remain the same as the previous version.
+
+## v1.5 uploads
+request_inputs.py validates a JSON brief and copies uploaded text documents into a per-request temporary folder with generated filenames. It maps human-approved exact quotations to document chunks. app.py creates that request's retriever and facts file, calls the same run_campaign coordinator, then removes its temporary copies. The shared cache contains the language model and original demo retriever; custom document retrieval is never reused between users. Gradio separately manages uploads and exported downloads. To support PDF or Word later, add text extraction and test it before passing text to this pipeline.

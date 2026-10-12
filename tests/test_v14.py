@@ -10,7 +10,7 @@ class WorkflowTests(unittest.TestCase):
    s,f=run_campaign(output_root=d,**kw)
    self.assertEqual(len(s.posts),3)
    self.assertEqual(len(s.trace),4)
-   self.assertEqual(json.loads(Path(f[2]).read_text())['version'],'1.4')
+   self.assertEqual(json.loads(Path(f[2]).read_text())['version'],'1.5')
    with open(f[1],newline='') as c:self.assertEqual(len(list(csv.reader(c))),s.brief['days']+1)
    self.assertTrue(s.campaign.endswith('Review all draft posts before publishing.'))
    return s

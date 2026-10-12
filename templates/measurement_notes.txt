@@ -1,0 +1,1 @@
+Track impressions and product-page visits. CTR is link clicks divided by impressions; a zero denominator makes the rate undefined. No historical performance data is supplied.

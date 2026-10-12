@@ -48,7 +48,7 @@ class State:
     campaign: str = ''
     trace: list = field(default_factory=list)
     warnings: list = field(default_factory=list)
-    version: str = '1.4'
+    version: str = '1.5'
     posts: list = field(default_factory=list)
     generation_events: list = field(default_factory=list)
     selected_evidence: list = field(default_factory=list)
@@ -255,7 +255,7 @@ def export_files(state, output_root):
     folder = Path(output_root) / uuid.uuid4().hex
     folder.mkdir(parents=True)
     report = folder / 'campaign_report.md'
-    report.write_text(f"# Campaign draft - version 1.4\n\nMode: {state.mode}\n\nReview claims, citations and budget before use.\n\n## Requested settings - authoritative\nBudget is ${state.brief['budget']:.2f} TOTAL across {state.brief['days']} days.\n{json.dumps(state.brief, indent=2)}\n\n## Draft review warnings\n{chr(10).join(state.warnings) or "No automated flags. Manual review is still required."}\n\n## Planner\n{state.plan}\n\n## Researcher\n{state.research}\n\n## Executor\n{state.campaign}\n\n## Retrieved evidence\n" + '\n\n'.join(f"[{e['id']}] {e['text']}" for e in state.evidence), encoding='utf-8')
+    report.write_text(f"# Campaign draft - version 1.5\n\nMode: {state.mode}\n\nReview claims, citations and budget before use.\n\n## Requested settings - authoritative\nBudget is ${state.brief['budget']:.2f} TOTAL across {state.brief['days']} days.\n{json.dumps(state.brief, indent=2)}\n\n## Draft review warnings\n{chr(10).join(state.warnings) or "No automated flags. Manual review is still required."}\n\n## Planner\n{state.plan}\n\n## Researcher\n{state.research}\n\n## Executor\n{state.campaign}\n\n## Retrieved evidence\n" + '\n\n'.join(f"[{e['id']}] {e['text']}" for e in state.evidence), encoding='utf-8')
     calendar = folder / 'content_calendar.csv'
     with calendar.open('w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
@@ -307,3 +307,4 @@ if __name__ == '__main__':
         parser.exit(1, f'Campaign could not finish: {exc}\nFor AI mode, install requirements.txt and allow model downloads.\n')
     print('\n'.join(state.trace))
     print('\n'.join(files))
+
