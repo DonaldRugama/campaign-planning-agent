@@ -47,3 +47,14 @@ class RegressionTests(unittest.TestCase):
         state=self.run_case(Omit())
         self.assertEqual(state.generation_events[1]['status'],'fallback')
         self.assertIn('approved product source',state.generation_events[1]['reason'])
+
+from workflow import validate_question_ids
+
+
+class QuestionIdValidationTests(unittest.TestCase):
+    def test_rejects_empty_unicode_boolean_and_out_of_range_indices(self):
+        for question_ids in ([], [0, 1, '２'], [0, 1, True], [-1, 1, 2], [0, 1, 3]):
+            with self.subTest(question_ids=question_ids):
+                with self.assertRaises(ValueError):
+                    validate_question_ids({'question_ids': question_ids})
+
